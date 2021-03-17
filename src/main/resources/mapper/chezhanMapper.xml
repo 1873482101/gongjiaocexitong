@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.demo.dao.cheliangdao">
+    <!--自定义结果集映射规则-->
+    <resultMap type="cheliang" id="cheliangMapper">
+        <result column="id" property="id"/>
+        <result column="city" property="city"/>
+        <result column="zhandian" property="zhandian"/>
+        <result column="gongjiaochehao" property="gongjiaochehao"/>
+        <result column="time" property="time"/>
+
+    </resultMap>
+    <select id="getbychelianghao" resultMap="cheliangMapper">
+        select id, city, zhandian, gongjiaochehao,time from zongbiao where gongjiaochehao = #{gongjiaochehao}
+    </select>
+
+    <select id="getbyzhandian" resultMap="cheliangMapper">
+        select id, city, zhandian, gongjiaochehao,time from zongbiao where zhandian like concat('%', #{zhandian}, '%')
+    </select>
+
+    <select id="getbycity" resultMap="cheliangMapper">
+        select id, city, zhandian, gongjiaochehao,time from zongbiao where city like concat('%', #{city}, '%')
+    </select>
+
+    <select id="getbycityzhandian" resultMap="cheliangMapper">
+        select id, city, zhandian, gongjiaochehao,time from zongbiao where city like concat('%', #{city}, '%') and zhandian like concat('%', #{zhandian}, '%')
+    </select>
+
+    <select id="getbycitygongjiaochehao" resultMap="cheliangMapper">
+        select id, city, zhandian, gongjiaochehao,time from zongbiao where city like concat('%', #{city}, '%') and gongjiaochehao = #{gongjiaochehao}
+    </select>
+
+    <select id="getbyid" resultMap="cheliangMapper">
+        select id, city, zhandian, gongjiaochehao,time from zongbiao where id = #{id}
+    </select>
+
+    <insert id="insertcheliang" parameterType="cheliang" useGeneratedKeys="true" keyProperty="id">
+	    insert into zongbiao(city, zhandian, gongjiaochehao, time) values(#{city}, #{zhandian}, #{gongjiaochehao}, #{time})
+	</insert>
+
+    <delete id="deletecheliang" parameterType="Long">
+	    delete from zongbiao where id = #{id}
+	</delete>
+
+
+</mapper>

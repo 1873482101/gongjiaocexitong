@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>站点查询</title>
+    <style>
+        li{
+            list-style-type: none;
+        }
+        #menu {
+            width: 450px;
+            margin: 30px auto 0px;
+            height: 45px;
+            background-color: #48cbff;
+        }
+        #menu li{
+            float: left;
+            width: 92px;
+            line-height:39px;
+            text-align: center;
+            position:relative;
+            border:none;
+        }
+        #menu li a {
+            font-size:16px; color: #e6f8e9;
+            display:block;
+            outline:0;
+            text-decoration:none; 
+        }
+        #menu li:hover a {
+            color: #ff0000; /*导航栏文字颜色 */
+        }
+        #menu li:hover .dropdown_1column {
+            left:0px;
+            top:38px;
+        }
+        .dropdown_1column{ /* 下拉菜单边框颜色*/
+            margin: 0px auto;
+            float: left;
+            position: absolute;
+            left: -999em;
+            text-align: left;
+            border: 1px solid #066591;
+            border-top: none;
+            background: #F4F4F4;
+            width: 140px;
+        }
+        #menu li:hover div a { /* 下拉菜单文字颜色*/
+        font-size:12px
+        ;color:#444;
+        }
+
+        #menu li:hover div a:hover{color:#21910e;} /*下拉带单鼠标停留颜色*/
+
+        #menu li ul {
+        list-style:none;padding:10px 5px;
+        margin:0;
+        }
+        #menu li ul li {                            /*下拉菜单间距*/
+        font-size:12px;
+        line-height:26px;
+        position:relative;
+        padding:0;margin:0;
+        float:none;
+        text-align:left;
+        width:130px;
+        }
+        #menu li ul li:hover {
+        background:none;
+        border:none;padding:0;
+        margin:0;
+        }
+
+    </style>
+</head>
+<body style="background-image: url(/timg.jpg);background-repeat: no-repeat;background-size: cover;">
+    <div id="menu">
+    <ul>
+        <li> <a href="/" class="nodrop">首页</a></li>
+        <li><a href="/cheliangchaxun" class="drop">信息查询</a>
+        <div class="dropdown_1column">
+            <div class="col_1">
+                    <ul class="simple">
+                            <li><a href="/cheliangchaxun">车辆查询</a></li>
+                            <li><a href="/zhandianchaxun">站点查询</a></li>
+                            <li><a href="/shikebiaochaxun">时刻表查询</a></li>
+                    </ul>
+            </div>
+        </div>
+        </li>
+        <li><a href="/lianxiwomen" class="nodrop">联系我们</a></li>
+        <li><a href="/pass" class="drop">登录注册</a></li>
+    </ul>
+    </div>
+    <form name="form4" action="/zhandianchaxun" method="post">
+        <table align="center">
+            <tr>
+                <td>城市<input type="text" name="city"/></td>
+                <td>公交车号<input type="text" name="gongjiaochehao"/></td>
+                <td><input name="submit" type="submit" value="查询"/></td>
+            </tr>  
+        </table>
+    </form>
+    <table width="100%" border=1>
+        <tr>
+            <td bgcolor="black"><font color="white">id</font></td>
+            <td bgcolor="black"><font color="white">站点</font></td>
+            <td bgcolor="black"><font color="white">时间</font></td>
+        </tr>
+            <tr>
+                <td th:text=${id1} bgcolor="#880044">&nbsp;</td> 
+                <td th:text=${zhandian1} bgcolor="#880044">&nbsp;</td> 
+                <td th:text=${time1} bgcolor="#880044">&nbsp;</td> 
+            </tr>
+            <tr>
+                <td th:text=${id2} bgcolor="green">&nbsp;</td> 
+                <td th:text=${zhandian2} bgcolor="green">&nbsp;</td> 
+                <td th:text=${time2} bgcolor="green">&nbsp;</td> 
+            </tr>
+            <tr>
+                <td th:text=${id3} bgcolor="red">&nbsp;</td> 
+                <td th:text=${zhandian3} bgcolor="red">&nbsp;</td> 
+                <td th:text=${time3} bgcolor="red">&nbsp;</td> 
+            </tr>
+            <tr>
+                <td th:text=${id4} bgcolor="#662288">&nbsp;</td> 
+                <td th:text=${zhandian4} bgcolor="#662288">&nbsp;</td> 
+                <td th:text=${time4} bgcolor="#662288">&nbsp;</td> 
+            </tr>
+            <tr>
+                <td th:text=${id5} bgcolor="yellow">&nbsp;</td> 
+                <td th:text=${zhandian5} bgcolor="yellow">&nbsp;</td> 
+                <td th:text=${time5} bgcolor="yellow">&nbsp;</td> 
+            </tr>
+    </table> 
+</body>
+</html>

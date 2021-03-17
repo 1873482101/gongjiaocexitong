@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        li{
+            list-style-type: none;
+        }
+        #menu {
+            width: 450px;
+            margin: 30px auto 0px;
+            height: 45px;
+            background-color: #48cbff;
+        }
+        #menu li{
+            float: left;
+            width: 92px;
+            line-height:39px;
+            text-align: center;
+            position:relative;
+            border:none;
+        }
+        #menu li a {
+            font-size:16px; color: #e6f8e9;
+            display:block;
+            outline:0;
+            text-decoration:none; 
+        }
+        #menu li:hover a {
+            color: #ff0000; /*导航栏文字颜色 */
+        }
+        #menu li:hover .dropdown_1column {
+            left:0px;
+            top:38px;
+        }
+        .dropdown_1column{ /* 下拉菜单边框颜色*/
+            margin: 0px auto;
+            float: left;
+            position: absolute;
+            left: -999em;
+            text-align: left;
+            border: 1px solid #066591;
+            border-top: none;
+            background: #F4F4F4;
+            width: 140px;
+        }
+        #menu li:hover div a { /* 下拉菜单文字颜色*/
+        font-size:12px
+        ;color:#444;
+        }
+
+        #menu li:hover div a:hover{color:#21910e;} /*下拉带单鼠标停留颜色*/
+
+        #menu li ul {
+        list-style:none;padding:10px 5px;
+        margin:0;
+        }
+        #menu li ul li {
+        font-size:12px;
+        line-height:26px;
+        position:relative;
+        padding:0;margin:0;
+        float:none;
+        text-align:left;
+        width:130px;
+        }
+        #menu li ul li:hover {
+        background:none;
+        border:none;padding:0;
+        margin:0;
+        }
+
+    </style>
+</head>
+
+<script type="text/javascript">
+
+    var i=0;
+    setInterval('changeColor()',500);
+    function changeColor(){
+        var div=document.getElementById('character'); //获得div元素
+        var colorArr=['#8A2BE2','#DEB887','#7FFF00','#008B8B','#FF1493']; //建立颜色库
+        if(i==colorArr.length){
+            i=0;
+        }else{
+            div.style.color=colorArr[i++%colorArr.length]; //循环颜色
+        }
+
+    }
+</script>
+
+<body style="background-repeat: no-repeat;background-size: cover;">
+    <div id="menu">
+    <ul>
+        <li> <a href="/" class="nodrop">首页</a></li>
+        <li><a href="/cheliangchaxun" class="drop">信息查询</a>
+        <div class="dropdown_1column">
+            <div class="col_1">
+                    <ul class="simple">
+                            <li><a href="/cheliangchaxun">车辆查询</a></li>
+                            <li><a href="/zhandianchaxun">站点查询</a></li>
+                            <li><a href="/shikebiaochaxun">时刻表查询</a></li>
+                    </ul>
+            </div>
+       
+        </div>
+        </li>
+        <li><a href="/lianxiwomen" class="nodrop">联系我们</a></li>
+        <li><a href="/pass">登录/注册</a></li>
+    </ul>
+    </div>
+
+
+    <div class='stage'>
+        <div class='ground-line'>
+            <div>
+                <span class='line1'></span>
+                <span class='line2'></span>
+                <span class='line3'></span>
+                <span class='line1'></span>
+                <span class='line2'></span>
+                <span class='line3'></span>
+            </div>
+        </div>
+
+        <div class='tree-wrap'>
+            <div class='tree'>
+                <div class='stem'>
+                    <div class='branch branch1'></div>
+                    <div class='branch branch2'></div>
+                    <div class='branch branch3'></div>
+                </div>
+                <div class='leef leef1'></div>
+                <div class='leef leef2'></div>
+            </div>
+        </div>
+
+        <div class='love-front'>
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+
+
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+        </div>
+        <div class='love-back'>
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+            <div class='love-wrap'>
+                <div class='love'>
+                    <span class='circle circle1'></span>
+                    <span class='circle circle2'></span>
+                    <span class='square'></span>
+                </div>
+            </div>
+        </div>
+
+        <div class='vehicle-body'>
+            <div class='wrap-body'>
+                <div class='rooftop back'></div>
+                <div class='rooftop front'></div>
+                <div class='body-cover'>
+                    <div class='top-roof'></div>
+                    <div class='indi back-top-indicator'></div>
+                    <div class='indi back-bottom-indicator'></div>
+                    <div class='back-window'>
+                        <div class='window-base top'></div>
+                        <div class='window-base bottom'></div>
+                        <div class='sun-shade'></div>
+                        <div class='curtain'>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class='windows-glass-wrap'>
+                            <div class='glass'>
+                                <div class='light'>
+                                    <span class='light1'></span>
+                                    <span class='light2'></span>
+                                    <span class='light3'></span>
+                                </div>
+                            </div>
+                            <div class='glass'>
+                                <div class='light'>
+                                    <span class='light1'></span>
+                                    <span class='light2'></span>
+                                    <span class='light3'></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='front-window'>
+                        <div class='window-base'></div>
+                        <div class='sun-shade'></div>
+                        <div class='curtain'>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class='windows-glass-wrap'>
+                            <div class='light'>
+                                <span class='light1'></span>
+                                <span class='light2'></span>
+                                <span class='light3'></span>
+                            </div>
+                        </div>
+                        <div class='air-hole'>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='main-door'>
+                    <div class='glass'>
+                        <div class='light'>
+                            <span class='light1'></span>
+                            <span class='light2'></span>
+                        </div>
+                    </div>
+                    <div class='door-handle'></div>
+                </div>
+                <div class='side-guard'>
+                    <div class='shade'></div>
+                    <div class='bumper back'></div>
+                    <div class='bumper front'></div>
+                    <div class='front-indicator'></div>
+                </div>
+            </div>
+
+            <div class='wheel-wrap back'>
+                <div class='wheel-shadow'></div>
+                <div class='wheel'>
+                    <div class='wheel-outer'>
+                        <div class='wheel-cup'>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='wheel-wrap front'>
+                <div class='wheel-shadow'></div>
+                <div class='wheel'>
+                    <div class='wheel-outer'>
+                        <div class='wheel-cup'>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <h1 class="title" id="character" >欢迎来到公交车管理系统</h1>
+
+
+</body>
+</html>
